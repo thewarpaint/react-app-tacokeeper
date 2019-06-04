@@ -1,33 +1,106 @@
-.App {
+/* Capture area */
+.input {
+  width: 2rem;
+  border: none;
+  border-bottom: 1px solid #b0bec5; /* Blue Gray 200 */
+  color: #b0bec5; /* Blue Gray 200 */
+  background-color: transparent;
+  font-size: 1.5rem;
   text-align: center;
+  transition-duration: .25s;
+  transition-timing-function: linear;
+  transition-property: color, border;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.input::-webkit-input-placeholder {
+  color: #b0bec5; /* Blue Gray 200 */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.input::-moz-placeholder {
+  color: #b0bec5; /* Blue Gray 200 */
+}
+
+.input::placeholder {
+  color: #b0bec5; /* Blue Gray 200 */
+}
+
+.input:focus {
+  border-bottom-color: #78909c; /* Blue Gray 400 */
+  color: #78909c; /* Blue Gray 400 */
+}
+
+.option--active .input {
+  border-bottom-color: #455a64; /* Blue Gray 700 */
+  color: #455a64; /* Blue Gray 700 */
+}
+
+.input::-webkit-inner-spin-button,
+.input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.options {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.option {
+  margin: 0;
+  padding: .75rem 1rem;
+  transition: .25s linear background;
+}
+
+.option--active {
+  background-color: #fff9c4; /* Yellow 100 */
+}
+
+.option--hidden {
+  display: none;
+}
+
+.option__label {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: baseline;
 }
 
-.App-link {
-  color: #61dafb;
+.option__times,
+.option__text {
+  margin-left: .25rem;
+  color: #b0bec5; /* Blue Gray 200 */
+  transition: .25s linear color;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.option__times,
+.option__name {
+  font-size: 1.5rem;
+}
+
+.option__tags {
+  font-size: .75rem;
+  font-weight: light;
+  text-transform: uppercase;
+}
+
+.option__tag:not(:first-child) {
+  display: inline-block;
+  margin-left: .5rem;
+}
+
+.option__tag--favourite {
+  color: #fbc02d; /* Yellow 700 */
+}
+
+.input:focus ~ .option__times,
+.input:focus ~ .option__text {
+  color: #78909c; /* Blue Gray 400 */
+}
+
+.option--active .option__times,
+.option--active .option__text,
+.option--active .input:focus ~ .option__times,
+.option--active .input:focus ~ .option__text {
+  color: #455a64; /* Blue Gray 700 */
 }

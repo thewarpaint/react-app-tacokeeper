@@ -1,26 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+
+import Variety from './components/variety';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const VARIETIES = [
+  {"key":"ACH","name":"achicalada","category":"carnitas","forms":{"singular":"de achicalada","plural":"de achicalada"}},
+  {"key":"ADO","name":"adobada","category":"parrilla","forms":{"singular":"de adobada","plural":"de adobada"}},
+  {"key":"AGU","name":"aguacate","category":"casero","forms":{"singular":"de aguacate","plural":"de aguacate"}},
+  {"key":"ALA","name":"alambre","category":"guisado","forms":{"singular":"de alambre","plural":"de alambre"}},
+  {"key":"ALV","name":"alambre","category":"vegano","forms":{"singular":"de alambre","plural":"de alambre"}},
+];
+
+class App extends Component {
+  state = {
+    varieties: VARIETIES.map(variety => {
+      variety.value = 0;
+
+      return variety;
+    })
+  };
+
+  handleChange = (varietyKey, varietyValue) => {
+    const varietyIndex = this.state.varieties.findIndex(variety => variety.key === varietyKey);
+    const varieties = [...this.state.varieties];
+
+    varieties[varietyIndex] = {...varieties[varietyIndex]};
+    varieties[varietyIndex].value = varietyValue;
+
+    this.setState({
+      varieties,
+    });
+  };
+
+  render() {
+    return (
+      <ul className="options">
+        {
+          this.state.varieties.map(variety => {
+            return <Variety
+                     key={variety.key}
+                     variety={variety}
+                     onChange={this.handleChange}
+                   />;
+          })
+        }
+      </ul>
+    );
+  }
 }
 
 export default App;
