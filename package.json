@@ -1,5 +1,6 @@
 {
   "name": "tacokeeper-react-app",
+  "homepage" : "https://thewarpaint.github.io/react-app-tacokeeper",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
