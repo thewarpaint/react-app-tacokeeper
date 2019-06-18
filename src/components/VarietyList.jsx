@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Variety from './Variety';
 
@@ -16,6 +16,6 @@ const VarietyList = (props) => {
       }
     </ul>
   );
-}
+};
 
 export default VarietyList;

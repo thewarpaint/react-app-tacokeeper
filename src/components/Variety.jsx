@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const Variety = (props) => {
   return (
@@ -33,6 +33,6 @@ const Variety = (props) => {
       </label>
     </li>
   );
-}
+};
 
 export default Variety;

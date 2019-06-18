@@ -104,3 +104,31 @@
 .option--active .input:focus ~ .option__text {
   color: #455a64; /* Blue Gray 700 */
 }
+
+.tweet-text {
+  position: relative;
+  margin: 2rem;
+  font-size: 1.5rem;
+}
+
+.tweet-text::before,
+.tweet-text::after {
+  position: absolute;
+  z-index: -1;
+  font-family: Montserrat, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 6rem;
+  color: #eceff1; /* Blue Gray 50 */
+}
+
+.tweet-text::before {
+  top: -2rem;
+  left: -2rem;
+  content: "“";
+}
+
+.tweet-text::after {
+  bottom: -4rem;
+  right: -2rem;
+  content: "”";
+}

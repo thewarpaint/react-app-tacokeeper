@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
+import TweetText from './components/TweetText';
 import VarietyList from './components/VarietyList';
 import './App.css';
 
@@ -33,10 +34,18 @@ class App extends Component {
   };
 
   render() {
-    return <VarietyList
-             varieties={this.state.varieties}
-             onChange={this.handleChange}
-           />;
+    return (
+      <Fragment>
+        <TweetText
+          varieties={this.state.varieties}
+        />
+
+        <VarietyList
+          varieties={this.state.varieties}
+          onChange={this.handleChange}
+        />
+      </Fragment>
+    );
   }
 }
 
