@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Variety from './components/variety';
+import VarietyList from './components/varietyList';
 import './App.css';
 
 const VARIETIES = [
@@ -33,19 +33,10 @@ class App extends Component {
   };
 
   render() {
-    return (
-      <ul className="options">
-        {
-          this.state.varieties.map(variety => {
-            return <Variety
-                     key={variety.key}
-                     variety={variety}
-                     onChange={this.handleChange}
-                   />;
-          })
-        }
-      </ul>
-    );
+    return <VarietyList
+             varieties={this.state.varieties}
+             onChange={this.handleChange}
+           />;
   }
 }
 
