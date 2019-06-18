@@ -32,8 +32,7 @@ function getText(varieties) {
 
 const TweetText = (props) => {
   return (
-    <div id="tweet-text"
-         className="tweet-text">
+    <div className="tweet-text">
       {getText(props.varieties)}
     </div>
   );

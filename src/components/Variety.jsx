@@ -2,7 +2,7 @@ import React from 'react';
 
 const Variety = (props) => {
   return (
-    <li className="option">
+    <li className={'option ' + (props.variety.visible ? '' : 'option--hidden')}>
       <label className="option__label">
         <input
           type="number"

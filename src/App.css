@@ -105,6 +105,29 @@
   color: #455a64; /* Blue Gray 700 */
 }
 
+/* Search */
+.search {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  border-bottom: 1px solid #b0bec5; /* Blue Gray 200 */
+  margin-bottom: .5rem;
+}
+
+.search__input {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  color: #78909c; /* Blue Gray 400 */
+  background-color: transparent;
+  font-size: 1.5rem;
+}
+
+.search__input::placeholder {
+  color: #b0bec5; /* Blue Gray 200 */
+}
+
 .tweet-text {
   position: relative;
   margin: 2rem;

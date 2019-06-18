@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
+import Search from './components/Search';
 import TweetText from './components/TweetText';
 import VarietyList from './components/VarietyList';
 import './App.css';
@@ -12,10 +13,32 @@ const VARIETIES = [
   {"key":"ALV","name":"alambre","category":"vegano","forms":{"singular":"de alambre","plural":"de alambre"}},
 ];
 
+function normaliseString(string) {
+  let normalisedString = string;
+  const normalisationMap = {
+    'á': 'a',
+    'é': 'e',
+    'í': 'i',
+    'ó': 'o',
+    'ú': 'u',
+    'ü': 'u',
+    'ñ': 'n',
+  };
+
+  for (let key in normalisationMap) {
+    normalisedString = normalisedString.replace(new RegExp(key, 'g'), normalisationMap[key]);
+  }
+
+  return normalisedString;
+}
+
 class App extends Component {
   state = {
     varieties: VARIETIES.map(variety => {
+      variety.normalisedCategory = normaliseString(variety.category);
+      variety.normalisedName = normaliseString(variety.name);
       variety.value = 0;
+      variety.visible = true;
 
       return variety;
     })
@@ -33,11 +56,34 @@ class App extends Component {
     });
   };
 
+  handleSearch = (searchTerm) => {
+    const normalisedSearchTerm = normaliseString(searchTerm);
+
+    const varieties = this.state.varieties.map(variety => {
+      const isMatch =
+        variety.normalisedName.indexOf(normalisedSearchTerm) !== -1 ||
+        variety.normalisedCategory.indexOf(normalisedSearchTerm) !== -1;
+
+      return {
+        ...variety,
+        visible: isMatch,
+      };
+    });
+
+    this.setState({
+      varieties,
+    });
+  };
+
   render() {
     return (
       <Fragment>
         <TweetText
           varieties={this.state.varieties}
+        />
+
+        <Search
+          onSearch={this.handleSearch}
         />
 
         <VarietyList
