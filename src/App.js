@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import VarietyList from './components/varietyList';
+import VarietyList from './components/VarietyList';
 import './App.css';
 
 const VARIETIES = [

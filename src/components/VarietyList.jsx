@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Variety from './variety';
+import Variety from './Variety';
 
 const VarietyList = (props) => {
   return (
