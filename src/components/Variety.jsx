@@ -1,15 +1,15 @@
 import React from 'react';
 
-const Variety = (props) => {
+const Variety = ({variety, onChange}) => {
   return (
-    <li className={'option ' + (props.variety.visible ? '' : 'option--hidden')}>
+    <li className={'option ' + (variety.visible ? '' : 'option--hidden')}>
       <label className="option__label">
         <input
           type="number"
           className="input option__input"
-          name={'option-' + props.variety.key}
-          value={props.variety.value}
-          onChange={event => props.onChange(props.variety.key, event.target.value)}
+          name={'option-' + variety.key}
+          value={variety.value}
+          onChange={event => onChange(variety.key, event.target.value)}
           min="0"
           max="99"
           placeholder="?"
@@ -21,12 +21,12 @@ const Variety = (props) => {
 
         <div className="option__text">
           <div className="option__name">
-            {props.variety.name}
+            {variety.name}
           </div>
 
           <div className="option__tags">
             <span className="option__tag">
-              {props.variety.category}
+              {variety.category}
             </span>
           </div>
         </div>
