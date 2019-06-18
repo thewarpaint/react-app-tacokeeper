@@ -3,15 +3,8 @@ import React, { Component, Fragment } from 'react';
 import Search from './components/Search';
 import TweetText from './components/TweetText';
 import VarietyList from './components/VarietyList';
+import {VARIETIES} from './varieties.config'
 import './App.css';
-
-const VARIETIES = [
-  {"key":"ACH","name":"achicalada","category":"carnitas","forms":{"singular":"de achicalada","plural":"de achicalada"}},
-  {"key":"ADO","name":"adobada","category":"parrilla","forms":{"singular":"de adobada","plural":"de adobada"}},
-  {"key":"AGU","name":"aguacate","category":"casero","forms":{"singular":"de aguacate","plural":"de aguacate"}},
-  {"key":"ALA","name":"alambre","category":"guisado","forms":{"singular":"de alambre","plural":"de alambre"}},
-  {"key":"ALV","name":"alambre","category":"vegano","forms":{"singular":"de alambre","plural":"de alambre"}},
-];
 
 function normaliseString(string) {
   let normalisedString = string;
