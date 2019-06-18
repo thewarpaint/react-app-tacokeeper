@@ -26,7 +26,7 @@ class App extends Component {
     const varieties = [...this.state.varieties];
 
     varieties[varietyIndex] = {...varieties[varietyIndex]};
-    varieties[varietyIndex].value = varietyValue;
+    varieties[varietyIndex].value = parseInt(varietyValue, 10);
 
     this.setState({
       varieties,

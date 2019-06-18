@@ -13,7 +13,7 @@ function formatList(terms) {
 
 function getPluralisedVariety(variety) {
   return variety.value +
-    (variety.value === '1'
+    (variety.value === 1
       ? ' taco ' + variety.forms.singular
       : ' tacos ' + variety.forms.plural);
 }
