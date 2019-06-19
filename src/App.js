@@ -7,7 +7,6 @@ import {VARIETIES} from './varieties.config'
 import './App.css';
 
 function normaliseString(string) {
-  let normalisedString = string;
   const normalisationMap = {
     'á': 'a',
     'é': 'e',
@@ -17,6 +16,8 @@ function normaliseString(string) {
     'ü': 'u',
     'ñ': 'n',
   };
+
+  let normalisedString = string.toLowerCase();
 
   for (let key in normalisationMap) {
     normalisedString = normalisedString.replace(new RegExp(key, 'g'), normalisationMap[key]);
