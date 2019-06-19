@@ -1,10 +1,13 @@
 import React, { Component, Fragment } from 'react';
+import debounce from 'lodash.debounce';
 
 import Search from './components/Search';
 import TweetText from './components/TweetText';
 import VarietyList from './components/VarietyList';
 import {VARIETIES} from './varieties.config'
 import './App.css';
+
+const SEARCH_DELAY = 200;
 
 function normaliseString(string) {
   const normalisationMap = {
@@ -50,7 +53,7 @@ class App extends Component {
     });
   };
 
-  handleSearch = (searchTerm) => {
+  handleSearch = debounce((searchTerm) => {
     const normalisedSearchTerm = normaliseString(searchTerm);
 
     const varieties = this.state.varieties.map(variety => {
@@ -67,7 +70,7 @@ class App extends Component {
     this.setState({
       varieties,
     });
-  };
+  }, SEARCH_DELAY);
 
   render() {
     return (
