@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import debounce from 'lodash.debounce';
 
 import Search from './components/Search';
+import TweetLink from './components/TweetLink';
 import TweetText from './components/TweetText';
 import VarietyList from './components/VarietyList';
 import {VARIETIES} from './varieties.config'
@@ -86,6 +87,10 @@ class App extends Component {
         <VarietyList
           varieties={this.state.varieties}
           onChange={this.handleChange}
+        />
+
+        <TweetLink
+          varieties={this.state.varieties}
         />
       </Fragment>
     );
