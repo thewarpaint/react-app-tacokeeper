@@ -1,10 +1,8 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import debounce from 'lodash.debounce';
 
-import Search from './components/Search';
-import TweetLink from './components/TweetLink';
-import TweetText from './components/TweetText';
-import VarietyList from './components/VarietyList';
+import CaptureSection from './components/CaptureSection';
 import {VARIETIES} from './varieties.config'
 import './App.css';
 
@@ -90,24 +88,20 @@ class App extends Component {
 
   render() {
     return (
-      <Fragment>
-        <TweetText
-          varieties={this.state.varieties}
+      <Router>
+        <Route
+          path="/"
+          render={() => {
+            return (
+              <CaptureSection
+                varieties={this.state.varieties}
+                handleSearch={this.handleSearch}
+                handleChange={this.handleChange}
+              />
+            );
+          }}
         />
-
-        <Search
-          onSearch={this.handleSearch}
-        />
-
-        <VarietyList
-          varieties={this.state.varieties}
-          onChange={this.handleChange}
-        />
-
-        <TweetLink
-          varieties={this.state.varieties}
-        />
-      </Fragment>
+      </Router>
     );
   }
 }
