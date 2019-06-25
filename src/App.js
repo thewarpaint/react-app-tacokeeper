@@ -8,6 +8,7 @@ import VarietyList from './components/VarietyList';
 import {VARIETIES} from './varieties.config'
 import './App.css';
 
+const MAX_TACOS_AMOUNT = 99;
 const SEARCH_DELAY = 200;
 
 function normaliseString(string) {
@@ -30,6 +31,20 @@ function normaliseString(string) {
   return normalisedString;
 }
 
+function sanitizeValue(stringValue) {
+  let value = parseInt(stringValue, 10);
+
+  if (isNaN(value)) {
+    return 0;
+  }
+
+  if (value > MAX_TACOS_AMOUNT) {
+    return MAX_TACOS_AMOUNT;
+  }
+
+  return value;
+}
+
 class App extends Component {
   state = {
     varieties: VARIETIES.map(variety => {
@@ -47,7 +62,7 @@ class App extends Component {
     const varieties = [...this.state.varieties];
 
     varieties[varietyIndex] = {...varieties[varietyIndex]};
-    varieties[varietyIndex].value = parseInt(varietyValue, 10);
+    varieties[varietyIndex].value = sanitizeValue(varietyValue);
 
     this.setState({
       varieties,

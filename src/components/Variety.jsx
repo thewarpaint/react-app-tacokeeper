@@ -8,7 +8,7 @@ const Variety = ({variety, onChange}) => {
           type="number"
           className="input option__input"
           name={'option-' + variety.key}
-          value={variety.value}
+          value={variety.value || ''}
           onChange={event => onChange(variety.key, event.target.value)}
           min="0"
           max="99"
