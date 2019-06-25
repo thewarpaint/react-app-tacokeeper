@@ -90,15 +90,24 @@ class App extends Component {
     return (
       <Router>
         <Route
+          exact
           path="/"
-          render={() => {
+          render={(routerProps) => {
             return (
               <CaptureSection
+                {...routerProps}
                 varieties={this.state.varieties}
                 handleSearch={this.handleSearch}
                 handleChange={this.handleChange}
               />
             );
+          }}
+        />
+
+        <Route
+          path="/success"
+          render={() => {
+            return <h2>Success!</h2>;
           }}
         />
       </Router>

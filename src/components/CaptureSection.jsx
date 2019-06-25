@@ -5,9 +5,13 @@ import TweetLink from './TweetLink';
 import TweetText from './TweetText';
 import VarietyList from './VarietyList';
 
-function CaptureSection({varieties, handleSearch, handleChange}) {
-	return (
-		<Fragment>
+function handleSuccess(history) {
+  history.push('/success');
+}
+
+function CaptureSection({history, varieties, handleSearch, handleChange}) {
+  return (
+    <Fragment>
       <TweetText
         varieties={varieties}
       />
@@ -23,6 +27,7 @@ function CaptureSection({varieties, handleSearch, handleChange}) {
 
       <TweetLink
         varieties={varieties}
+        onSuccess={() => handleSuccess(history)}
       />
     </Fragment>
   );

@@ -6,8 +6,16 @@ const hashtagAndMention = '#tacokeeper @tacokeeperbot';
 const tacoKeeperUrl = 'https://tacokeeper.com/';
 const twitterIntentUrl = 'https://twitter.com/intent/tweet';
 
+function getActiveVarieties(varieties) {
+  return varieties.filter(variety => variety.value > 0);
+}
+
+function hasActiveVarieties(varieties) {
+  return getActiveVarieties(varieties).length > 0;
+}
+
 function getTweetHref(varieties) {
-  const activeVarieties = varieties.filter(variety => variety.value > 0);
+  const activeVarieties = getActiveVarieties(varieties);
 
   if (!activeVarieties.length) {
     return '#';
@@ -22,8 +30,8 @@ function getTweetHref(varieties) {
 
 function getTacoKeeperData(activeVarieties) {
   return activeVarieties
-      .map(variety => variety.key + zeroPad(variety.value))
-      .join('');
+    .map(variety => variety.key + zeroPad(variety.value))
+    .join('');
 }
 
 function zeroPad(number) {
@@ -34,13 +42,18 @@ function zeroPad(number) {
   return number.toString();
 }
 
-const TweetLink = (props) => {
+const TweetLink = ({onSuccess, varieties}) => {
   return (
     <div className="tweet-link-wrapper">
-      <a href={getTweetHref(props.varieties)}
-         className="tweet-link"
-         target="_blank"
-         rel="noopener noreferrer">Comparte en Twitter</a>
+      <a
+        href={getTweetHref(varieties)}
+        className="tweet-link"
+        target={hasActiveVarieties(varieties) ? '_blank' : ''}
+        rel="noopener noreferrer"
+        onClick={hasActiveVarieties(varieties) ? onSuccess : undefined}
+      >
+        Comparte en Twitter
+      </a>
     </div>
   );
 };
