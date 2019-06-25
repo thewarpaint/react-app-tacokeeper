@@ -6,6 +6,7 @@ import CaptureSection from './components/CaptureSection';
 import {VARIETIES} from './varieties.config'
 import './App.css';
 
+const BASENAME = process.env.PUBLIC_URL;
 const MAX_TACOS_AMOUNT = 99;
 const SEARCH_DELAY = 200;
 
@@ -88,7 +89,9 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
+      <Router
+        basename={BASENAME}
+      >
         <Route
           exact
           path="/"
