@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cb1b237bd401c0005ad185b5023a1c8e",
+    "revision": "24b5acea87c365db0e3e0305f2cb30a7",
     "url": "/react-app-tacokeeper/index.html"
   },
   {
-    "revision": "7dbb58dd8ee9716b14f7",
+    "revision": "0a4ac05738a9325e6489",
     "url": "/react-app-tacokeeper/static/css/main.9cfb2e42.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-app-tacokeeper/static/js/2.0454f4c2.chunk.js"
   },
   {
-    "revision": "7dbb58dd8ee9716b14f7",
-    "url": "/react-app-tacokeeper/static/js/main.208e6635.chunk.js"
+    "revision": "0a4ac05738a9325e6489",
+    "url": "/react-app-tacokeeper/static/js/main.fc72657a.chunk.js"
   },
   {
     "revision": "a2477bb7b53037d7f831",
