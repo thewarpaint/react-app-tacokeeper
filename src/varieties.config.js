@@ -16,6 +16,7 @@ export const VARIETIES = [
   {"key":"BAD","name":"barbacoa","category":"dorados","forms":{"singular":"de barbacoa","plural":"de barbacoa"}},
   {"key":"BAS","name":"barbasoya","category":"vegano","forms":{"singular":"de barbasoya","plural":"de barbasoya"}},
   {"key":"BBS","name":"barbasetas","category":"vegano","forms":{"singular":"de barbasetas","plural":"de barbasetas"}},
+  {"key":"BRG","name":"barriga","category":"carnitas","forms":{"singular":"de barriga","plural":"de barriga"}},
   {"key":"BIR","name":"birria","category":"birria","forms":{"singular":"de birria","plural":"de birria"}},
   {"key":"BIS","name":"bistec","category":"parrilla","forms":{"singular":"de bistec","plural":"de bistec"}},
   {"key":"BEV","name":"bistec encebollado","category":"vegano","forms":{"singular":"de bistec encebollado","plural":"de bistec encebollado"}},
@@ -83,6 +84,7 @@ export const VARIETIES = [
   {"key":"MCH","name":"machitos","category":"parrilla","forms":{"singular":"de machitos","plural":"de machitos"}},
   {"key":"MCC","name":"machacado","category":"guisado","forms":{"singular":"de machacado","plural":"de machacado"}},
   {"key":"MAC","name":"maciza","category":"carnitas","forms":{"singular":"de maciza","plural":"de maciza"}},
+  {"key":"MCU","name":"maciza con cuerito","category":"carnitas","forms":{"singular":"de maciza con cuerito","plural":"de maciza con cuerito"}},
   {"key":"MAR","name":"marlín","category":"frutos del mar","forms":{"singular":"de marlín","plural":"de marlín"}},
   {"key":"MIX","name":"mixiote","category":"mixiote","forms":{"singular":"de mixiote","plural":"de mixiote"}},
   {"key":"MIL","name":"milanesa","category":"guisado","forms":{"singular":"de milanesa","plural":"de milanesa"}},
@@ -140,4 +142,5 @@ export const VARIETIES = [
   {"key":"TOR","name":"tortita de papa","category":"guisado","forms":{"singular":"de tortita de papa","plural":"de tortita de papa"}},
   {"key":"TRI","name":"tripa","category":"parrilla","forms":{"singular":"de tripa","plural":"de tripa"}},
   {"key":"TRO","name":"trompa","category":"carnitas","forms":{"singular":"de trompa","plural":"de trompa"}},
-  {"key":"VIR","name":"viril","category":"carnitas","forms":{"singular":"de viril","plural":"de viril"}}];
+  {"key":"VIR","name":"viril","category":"carnitas","forms":{"singular":"de viril","plural":"de viril"}}
+];
