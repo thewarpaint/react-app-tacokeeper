@@ -1,8 +1,12 @@
 const FAVOURITES_KEY = 'favourites';
 
+export function getFavouritesFromLocalStorage() {
+  return window.localStorage.getItem(FAVOURITES_KEY);
+}
+
 export function getFavourites() {
   try {
-    const favouritesString = window.localStorage.getItem(FAVOURITES_KEY);
+    const favouritesString = getFavouritesFromLocalStorage();
 
     if (favouritesString == null) {
       return [];

@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
 import { appendToFavourites } from '../favourites';
 import Search from './Search';
@@ -36,6 +37,8 @@ function CaptureSection({history, varieties, handleSearch, handleChange}) {
         varieties={varieties}
         onSuccess={() => handleSuccess(history, varieties)}
       />
+
+      <Link to="/settings">Configuración</Link>
     </Fragment>
   );
 }

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import debounce from 'lodash.debounce';
 
 import CaptureSection from './components/CaptureSection';
+import Settings from './components/Settings';
 import { getFavourites } from './favourites';
 import { VARIETIES } from './varieties.config';
 import './App.css';
@@ -132,6 +133,11 @@ class App extends Component {
           render={() => {
             return <h2>Success!</h2>;
           }}
+        />
+
+        <Route
+          path="/settings"
+          component={Settings}
         />
       </Router>
     );
