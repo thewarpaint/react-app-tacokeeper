@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import debounce from 'lodash.debounce';
 
 import CaptureSection from './components/CaptureSection';
+import { getFavourites } from './favourites';
 import { VARIETIES } from './varieties.config';
 import './App.css';
 
@@ -42,21 +43,6 @@ function sanitizeValue(stringValue) {
   }
 
   return value;
-}
-
-function getFavourites() {
-  try {
-    const favouritesString = window.localStorage.getItem('favourites');
-
-    if (favouritesString == null) {
-      return [];
-    }
-
-    return JSON.parse(favouritesString);
-  } catch (e) {
-    // TODO: captureException using Sentry
-    return [];
-  }
 }
 
 function processVarieties(varieties) {
