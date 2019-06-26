@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import debounce from 'lodash.debounce';
 
 import CaptureSection from './components/CaptureSection';
-import {VARIETIES} from './varieties.config'
+import { FAVOURITES, VARIETIES } from './varieties.config';
 import './App.css';
 
 const BASENAME = process.env.PUBLIC_URL;
@@ -44,17 +44,36 @@ function sanitizeValue(stringValue) {
   return value;
 }
 
-class App extends Component {
-  state = {
-    varieties: VARIETIES.map(variety => {
-      variety.normalisedCategory = normaliseString(variety.category);
-      variety.normalisedName = normaliseString(variety.name);
-      variety.value = 0;
-      variety.visible = true;
+function processVarieties(varieties) {
+  const favouriteKeys = FAVOURITES.map(favourite => favourite.key);
 
-      return variety;
-    })
-  };
+  return varieties
+    .reduce((acc, variety) => {
+      favouriteKeys.includes(variety.key)
+        ? acc[0].push(variety)
+        : acc[1].push(variety);
+
+      return acc;
+    }, [[], []])
+    .flat()
+    .map(variety => ({
+      ...variety,
+      normalisedCategory: normaliseString(variety.category),
+      normalisedName: normaliseString(variety.name),
+      value: 0,
+      visible: true,
+      favourite: favouriteKeys.includes(variety.key),
+    }));
+}
+
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      varieties: processVarieties(VARIETIES),
+    };
+  }
 
   handleChange = (varietyKey, varietyValue) => {
     const varietyIndex = this.state.varieties.findIndex(variety => variety.key === varietyKey);

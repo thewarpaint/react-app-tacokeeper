@@ -1,3 +1,21 @@
+export const FAVOURITES = [
+  {
+    key: 'CAM',
+  },
+  {
+    key: 'PAS',
+  },
+  {
+    key: 'MAC',
+  },
+  {
+    key: 'TRI',
+  },
+  {
+    key: 'CHS',
+  },
+];
+
 export const VARIETIES = [
   {"key":"ACH","name":"achicalada","category":"carnitas","forms":{"singular":"de achicalada","plural":"de achicalada"}},
   {"key":"ADO","name":"adobada","category":"parrilla","forms":{"singular":"de adobada","plural":"de adobada"}},

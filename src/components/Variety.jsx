@@ -25,6 +25,8 @@ const Variety = ({variety, onChange}) => {
           </div>
 
           <div className="option__tags">
+            {variety.favourite && <span className="option__tag option__tag--favourite">Favorito</span>}
+
             <span className="option__tag">
               {variety.category}
             </span>
