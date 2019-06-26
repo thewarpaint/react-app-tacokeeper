@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "24b5acea87c365db0e3e0305f2cb30a7",
+    "revision": "9b1c6497c84e3e02ab1b2bc5375c74d5",
     "url": "/react-app-tacokeeper/index.html"
   },
   {
