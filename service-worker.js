@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/react-app-tacokeeper/precache-manifest.fc31e306828d83f6b7eed70f8bb07ec3.js"
+  "/react-app-tacokeeper/precache-manifest.259dc1e54638945f9d5a586aa07df2e5.js"
 );
 
 self.addEventListener('message', (event) => {
