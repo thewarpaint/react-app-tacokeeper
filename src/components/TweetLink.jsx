@@ -14,7 +14,7 @@ function hasActiveVarieties(varieties) {
   return getActiveVarieties(varieties).length > 0;
 }
 
-function getTweetHref(varieties) {
+function getTweetHref(screenName, varieties) {
   const activeVarieties = getActiveVarieties(varieties);
 
   if (!activeVarieties.length) {
@@ -23,7 +23,7 @@ function getTweetHref(varieties) {
 
   const tweetText = getTweetText(activeVarieties);
   const tacoKeeperData = getTacoKeeperData(activeVarieties);
-  const tweetContent = `${tweetText} ${hashtagAndMention} ${tacoKeeperUrl}?t=${tacoKeeperData}`;
+  const tweetContent = `${tweetText} ${hashtagAndMention} ${tacoKeeperUrl}${screenName}?t=${tacoKeeperData}`;
 
   return `${twitterIntentUrl}?text=${encodeURIComponent(tweetContent)}`;
 }
@@ -42,11 +42,11 @@ function zeroPad(number) {
   return number.toString();
 }
 
-const TweetLink = ({onSuccess, varieties}) => {
+const TweetLink = ({onSuccess, screenName, varieties}) => {
   return (
     <div className="tweet-link-wrapper">
       <a
-        href={getTweetHref(varieties)}
+        href={getTweetHref(screenName, varieties)}
         className="tweet-link"
         target={hasActiveVarieties(varieties) ? '_blank' : ''}
         rel="noopener noreferrer"

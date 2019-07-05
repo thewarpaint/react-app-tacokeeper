@@ -5,6 +5,7 @@ import debounce from 'lodash.debounce';
 import CaptureSection from './components/CaptureSection';
 import Settings from './components/Settings';
 import { getFavourites } from './favourites';
+import { getSettings } from './settings';
 import { VARIETIES } from './varieties.config';
 import './App.css';
 
@@ -73,6 +74,7 @@ class App extends Component {
     super();
 
     this.state = {
+      settings: getSettings(),
       varieties: processVarieties(VARIETIES),
     };
   }
@@ -120,6 +122,7 @@ class App extends Component {
             return (
               <CaptureSection
                 {...routerProps}
+                settings={this.state.settings}
                 varieties={this.state.varieties}
                 handleSearch={this.handleSearch}
                 handleChange={this.handleChange}

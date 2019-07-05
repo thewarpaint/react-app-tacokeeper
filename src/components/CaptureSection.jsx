@@ -17,7 +17,7 @@ function handleSuccess(history, varieties) {
   );
 }
 
-function CaptureSection({history, varieties, handleSearch, handleChange}) {
+function CaptureSection({handleChange, handleSearch, history, settings, varieties}) {
   return (
     <Fragment>
       <TweetText
@@ -34,8 +34,9 @@ function CaptureSection({history, varieties, handleSearch, handleChange}) {
       />
 
       <TweetLink
-        varieties={varieties}
         onSuccess={() => handleSuccess(history, varieties)}
+        screenName={settings.screenName}
+        varieties={varieties}
       />
 
       <Link to="/settings">Configuración</Link>
