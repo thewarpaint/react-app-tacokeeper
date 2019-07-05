@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { appendToFavourites } from '../favourites';
 import Search from './Search';
-import TweetLink from './TweetLink';
+import SocialLinks from './SocialLinks';
 import TweetText from './TweetText';
 import VarietyList from './VarietyList';
 
@@ -33,7 +33,7 @@ function CaptureSection({handleChange, handleSearch, history, settings, varietie
         onChange={handleChange}
       />
 
-      <TweetLink
+      <SocialLinks
         onSuccess={() => handleSuccess(history, varieties)}
         screenName={settings.screenName}
         varieties={varieties}

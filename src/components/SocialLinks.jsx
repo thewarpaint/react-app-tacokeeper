@@ -42,12 +42,12 @@ function zeroPad(number) {
   return number.toString();
 }
 
-const TweetLink = ({onSuccess, screenName, varieties}) => {
+const SocialLinks = ({onSuccess, screenName, varieties}) => {
   return (
-    <div className="tweet-link-wrapper">
+    <div className="social-links-wrapper">
       <a
         href={getTweetHref(screenName, varieties)}
-        className="tweet-link"
+        className="social-link social-link--twitter"
         target={hasActiveVarieties(varieties) ? '_blank' : ''}
         rel="noopener noreferrer"
         onClick={hasActiveVarieties(varieties) ? onSuccess : undefined}
@@ -58,4 +58,4 @@ const TweetLink = ({onSuccess, screenName, varieties}) => {
   );
 };
 
-export default TweetLink;
+export default SocialLinks;

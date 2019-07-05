@@ -157,8 +157,8 @@
   content: "”";
 }
 
-/* Tweet link */
-.tweet-link-wrapper {
+/* Social link */
+.social-links-wrapper {
   position: -webkit-sticky;
   position: sticky;
   bottom: .5rem;
@@ -166,13 +166,11 @@
   text-align: center;
 }
 
-.tweet-link {
+.social-link {
   display: inline-block;
   padding: .875rem 1.5rem;
   margin: 0 auto;
-  color: #1da1f2; /* Twitter Blue */
   background-color: white;
-  border: .125rem solid #1da1f2; /* Twitter Blue */
   border-radius: 5rem;
   font-size: 1.125rem;
   font-family: Montserrat, Helvetica, sans-serif;
@@ -185,7 +183,12 @@
   transition-property: color, border;
 }
 
-.tweet-link:hover {
+.social-link--twitter {
+  color: #1da1f2; /* Twitter Blue */
+  border: .125rem solid #1da1f2; /* Twitter Blue */
+}
+
+.social-link:hover {
   color: #263238; /* Blue Gray 900 */
   border-color: #263238; /* Blue Gray 900 */
 }
