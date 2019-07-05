@@ -52,7 +52,7 @@ const TweetLink = ({onSuccess, screenName, varieties}) => {
         rel="noopener noreferrer"
         onClick={hasActiveVarieties(varieties) ? onSuccess : undefined}
       >
-        Comparte en Twitter
+        Twitter
       </a>
     </div>
   );
