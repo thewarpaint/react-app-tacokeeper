@@ -1,10 +1,7 @@
 import React from 'react';
 
-import {getTweetText} from '../tweetHelpers';
-
-const hashtagAndMention = '#tacokeeper @tacokeeperbot';
-const tacoKeeperUrl = 'https://tacokeeper.com/';
-const twitterIntentUrl = 'https://twitter.com/intent/tweet';
+import { getTextContent, TWITTER_INTENT_URL } from '../social';
+import { getTweetText } from '../tweetHelpers';
 
 function getActiveVarieties(varieties) {
   return varieties.filter(variety => variety.value > 0);
@@ -14,7 +11,7 @@ function hasActiveVarieties(varieties) {
   return getActiveVarieties(varieties).length > 0;
 }
 
-function getTweetHref(screenName, varieties) {
+function getTweetHref(userScreenName, varieties) {
   const activeVarieties = getActiveVarieties(varieties);
 
   if (!activeVarieties.length) {
@@ -23,9 +20,9 @@ function getTweetHref(screenName, varieties) {
 
   const tweetText = getTweetText(activeVarieties);
   const tacoKeeperData = getTacoKeeperData(activeVarieties);
-  const tweetContent = `${tweetText} ${hashtagAndMention} ${tacoKeeperUrl}${screenName}?t=${tacoKeeperData}`;
+  const tweetContent = getTextContent(tweetText, userScreenName, tacoKeeperData, 'twitter');
 
-  return `${twitterIntentUrl}?text=${encodeURIComponent(tweetContent)}`;
+  return `${TWITTER_INTENT_URL}?text=${encodeURIComponent(tweetContent)}`;
 }
 
 function getTacoKeeperData(activeVarieties) {
