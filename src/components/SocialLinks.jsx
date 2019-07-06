@@ -54,6 +54,13 @@ const SocialLinks = ({onSuccess, screenName, varieties}) => {
       >
         Twitter
       </a>
+
+      <a
+        href="https://tacokeeper.com/"
+        className="social-link social-link--instagram"
+      >
+        Instagram
+      </a>
     </div>
   );
 };

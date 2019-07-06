@@ -168,10 +168,12 @@
 
 .social-link {
   display: inline-block;
-  padding: .875rem 1.5rem;
-  margin: 0 auto;
+  padding: .875rem 1.25rem;
+  margin: 0 .25rem;
   background-color: white;
   border-radius: 5rem;
+  border-width: .125rem;
+  border-style: solid;
   font-size: 1.125rem;
   font-family: Montserrat, Helvetica, sans-serif;
   font-weight: 700;
@@ -180,15 +182,25 @@
   text-transform: uppercase;
   transition-duration: .25s;
   transition-timing-function: linear;
-  transition-property: color, border;
+  transition-property: color, border, background;
+}
+
+.social-link--instagram {
+  color: #e1306c; /* Instagram Pink */
+  border-color: #e1306c; /* Instagram Pink */
+}
+
+.social-link--instagram:hover {
+  color: white;
+  background-color: #e1306c; /* Instagram Pink */
 }
 
 .social-link--twitter {
   color: #1da1f2; /* Twitter Blue */
-  border: .125rem solid #1da1f2; /* Twitter Blue */
+  border-color: #1da1f2; /* Twitter Blue */
 }
 
-.social-link:hover {
-  color: #263238; /* Blue Gray 900 */
-  border-color: #263238; /* Blue Gray 900 */
+.social-link--twitter:hover {
+  color: white;
+  background-color: #1da1f2; /* Twitter Blue */
 }
