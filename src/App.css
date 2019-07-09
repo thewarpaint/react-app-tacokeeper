@@ -1,3 +1,12 @@
+/* Global */
+.link {
+  color: #2196f3; /* Blue 500 */
+}
+
+.link:hover {
+  color: #1976d2; /* Blue 700 */
+}
+
 /* Capture area */
 .input {
   width: 2rem;
@@ -203,4 +212,10 @@
 .social-link--twitter:hover {
   color: white;
   background-color: #1da1f2; /* Twitter Blue */
+}
+
+/* Footer */
+.footer {
+  margin: 2rem 0;
+  text-align: center;
 }

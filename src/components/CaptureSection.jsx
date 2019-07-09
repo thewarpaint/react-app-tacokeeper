@@ -39,7 +39,14 @@ function CaptureSection({handleChange, handleSearch, history, settings, varietie
         varieties={varieties}
       />
 
-      <Link to="/settings">Configuración</Link>
+      <footer className="footer">
+        <Link
+          to="/settings"
+          className="link"
+        >
+          Configuración
+        </Link>
+      </footer>
     </Fragment>
   );
 }
