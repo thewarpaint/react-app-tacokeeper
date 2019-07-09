@@ -1,11 +1,11 @@
 import React from 'react';
 
-import {getTweetText} from '../tweetHelpers';
+import {getShareText} from '../social';
 
 const TweetText = (props) => {
   return (
     <div className="tweet-text">
-      {getTweetText(props.varieties)}
+      {getShareText(props.varieties)}
     </div>
   );
 };
