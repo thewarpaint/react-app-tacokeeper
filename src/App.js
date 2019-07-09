@@ -4,6 +4,7 @@ import debounce from 'lodash.debounce';
 
 import CaptureSection from './components/CaptureSection';
 import Settings from './components/Settings';
+import ShareToInstagram from './components/ShareToInstagram';
 import { getFavourites } from './favourites';
 import { getSettings } from './settings';
 import { VARIETIES } from './varieties.config';
@@ -135,6 +136,18 @@ class App extends Component {
           path="/success"
           render={() => {
             return <h2>Success!</h2>;
+          }}
+        />
+
+        <Route
+          path="/instagram"
+          render={(routerProps) => {
+            return (
+              <ShareToInstagram
+                {...routerProps}
+                varieties={this.state.varieties}
+              />
+            );
           }}
         />
 

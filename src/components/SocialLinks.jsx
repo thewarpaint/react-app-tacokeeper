@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { getTextContent, TWITTER_INTENT_URL } from '../social';
-import { getTweetText } from '../tweetHelpers';
 
 function getActiveVarieties(varieties) {
   return varieties.filter(variety => variety.value > 0);
@@ -18,25 +18,9 @@ function getTweetHref(userScreenName, varieties) {
     return '#';
   }
 
-  const tweetText = getTweetText(activeVarieties);
-  const tacoKeeperData = getTacoKeeperData(activeVarieties);
-  const tweetContent = getTextContent(tweetText, userScreenName, tacoKeeperData, 'twitter');
+  const tweetContent = getTextContent(activeVarieties, userScreenName, 'twitter');
 
   return `${TWITTER_INTENT_URL}?text=${encodeURIComponent(tweetContent)}`;
-}
-
-function getTacoKeeperData(activeVarieties) {
-  return activeVarieties
-    .map(variety => variety.key + zeroPad(variety.value))
-    .join('');
-}
-
-function zeroPad(number) {
-  if (number <= 9) {
-    return '0' + number.toString();
-  }
-
-  return number.toString();
 }
 
 const SocialLinks = ({onSuccess, screenName, varieties}) => {
@@ -52,12 +36,12 @@ const SocialLinks = ({onSuccess, screenName, varieties}) => {
         Twitter
       </a>
 
-      <a
-        href="https://tacokeeper.com/"
+      <Link
+        to="/instagram"
         className={'social-link social-link--instagram' + (hasActiveVarieties(varieties) ? '' : ' social-link--disabled')}
       >
         Instagram
-      </a>
+      </Link>
     </div>
   );
 };
