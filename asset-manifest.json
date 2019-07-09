@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-app-tacokeeper/static/css/main.d794a0e3.chunk.css",
-    "main.js": "/react-app-tacokeeper/static/js/main.2b92b241.chunk.js",
-    "main.js.map": "/react-app-tacokeeper/static/js/main.2b92b241.chunk.js.map",
+    "main.css": "/react-app-tacokeeper/static/css/main.e97be118.chunk.css",
+    "main.js": "/react-app-tacokeeper/static/js/main.1319ae72.chunk.js",
+    "main.js.map": "/react-app-tacokeeper/static/js/main.1319ae72.chunk.js.map",
     "runtime~main.js": "/react-app-tacokeeper/static/js/runtime~main.7263a46f.js",
     "runtime~main.js.map": "/react-app-tacokeeper/static/js/runtime~main.7263a46f.js.map",
     "static/js/2.e8ec98fe.chunk.js": "/react-app-tacokeeper/static/js/2.e8ec98fe.chunk.js",
     "static/js/2.e8ec98fe.chunk.js.map": "/react-app-tacokeeper/static/js/2.e8ec98fe.chunk.js.map",
     "index.html": "/react-app-tacokeeper/index.html",
-    "precache-manifest.cc3143e472ec36c64588341382ee1033.js": "/react-app-tacokeeper/precache-manifest.cc3143e472ec36c64588341382ee1033.js",
+    "precache-manifest.fc435fa2b0270ba4b24378bfd2595354.js": "/react-app-tacokeeper/precache-manifest.fc435fa2b0270ba4b24378bfd2595354.js",
     "service-worker.js": "/react-app-tacokeeper/service-worker.js",
-    "static/css/main.d794a0e3.chunk.css.map": "/react-app-tacokeeper/static/css/main.d794a0e3.chunk.css.map"
+    "static/css/main.e97be118.chunk.css.map": "/react-app-tacokeeper/static/css/main.e97be118.chunk.css.map"
   }
 }
