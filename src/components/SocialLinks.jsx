@@ -44,7 +44,7 @@ const SocialLinks = ({onSuccess, screenName, varieties}) => {
     <div className="social-links-wrapper">
       <a
         href={getTweetHref(screenName, varieties)}
-        className="social-link social-link--twitter"
+        className={'social-link social-link--twitter' + (hasActiveVarieties(varieties) ? '' : ' social-link--disabled')}
         target={hasActiveVarieties(varieties) ? '_blank' : ''}
         rel="noopener noreferrer"
         onClick={hasActiveVarieties(varieties) ? onSuccess : undefined}
@@ -54,7 +54,7 @@ const SocialLinks = ({onSuccess, screenName, varieties}) => {
 
       <a
         href="https://tacokeeper.com/"
-        className="social-link social-link--instagram"
+        className={'social-link social-link--instagram' + (hasActiveVarieties(varieties) ? '' : ' social-link--disabled')}
       >
         Instagram
       </a>
