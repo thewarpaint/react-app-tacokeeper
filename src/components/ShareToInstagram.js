@@ -14,14 +14,18 @@ const ShareToInstagram = ({varieties}) => {
       <h2>Compartir en Instagram</h2>
 
       <div>
-        <label htmlFor="favouritesTextarea">
-          Texto
+        <label
+          htmlFor="favouritesTextarea"
+          className="share-to-instagram__label"
+        >
+          Por favor agrega el siguiente texto como descripción de tu publicación en Instagram:
         </label>
 
         <textarea
           id="favouritesTextarea"
+          className="share-to-instagram__textarea"
           value={getText(varieties)}
-          disabled
+          readonly
         />
       </div>
 

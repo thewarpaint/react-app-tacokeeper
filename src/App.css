@@ -221,6 +221,22 @@
   background-color: #eceff1; /* Blue Gray 50 */
 }
 
+/* Share to Instagram */
+.share-to-instagram__label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.share-to-instagram__textarea {
+  display: block;
+  width: 100%;
+  height: 10rem;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+
+  /* .tweet-text */
+  font-size: 1.5rem;
+}
+
 /* Footer */
 .footer {
   margin: 2rem 0;
